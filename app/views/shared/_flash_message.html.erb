@@ -1,12 +1,14 @@
 <div id="flash">
 	<% flash.each do |key, msg|%>
+		<% key = key.to_sym %>
 		<% if (key == :error || key == :created || key == :updated || key == :success || key == :deleted)%>
-			<div class=<%= "alert alert-#{key}"%>>
-					<%= key%>
+			<div class= "alert alert-<%= key%>">
+					<strong><%= key%> : </strong>
 					<%= msg%>
 			</div>
 		<% elsif key == :message%>
-			<div class=<%= "alert alert-#{key}"%>>
+			<div class="alert alert-<%= key%>">
+				<%= msg%>
 			</div>
 		<% end %>
 	<% end %>

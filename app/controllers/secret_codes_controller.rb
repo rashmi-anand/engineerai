@@ -8,7 +8,7 @@ class SecretCodesController < ApplicationController
 	def create
 		sc_count = secret_code_params[:count].to_i
 		SecretCode.create_codes sc_count
-		flash[:now] = "#{ sc_count} secret code created successfully"
+		flash[:success] = "#{sc_count} secret code created successfully"
 		redirect_to secret_codes_path
 	end	
 

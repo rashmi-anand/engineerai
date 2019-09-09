@@ -17,7 +17,7 @@ class SecretCode < ApplicationRecord
 	def self.create_codes count
 		codes = []
 		count.times.each do |i|
-			code = SecureRandom.uuid[0...6] 
+			code = SecureRandom.uuid[0...6]
 			codes << SecretCode.create(code: code)
 		end
 		codes

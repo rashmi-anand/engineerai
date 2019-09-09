@@ -19,7 +19,7 @@
         <% if user_signed_in? %>
           <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "my-2 my-sm-0" %>
         <% else %>
-          <%= link_to 'Login', new_user_session_path, class: "my-2 my-sm-0" %>  
+          <%= link_to 'Login', new_user_session_path, class: "my-2 my-sm-0" %>  |  
           <%= link_to 'Sign Up', new_registration_path(:user), class: "my-2 my-sm-0" %>  
         <% end %>
       </div>
