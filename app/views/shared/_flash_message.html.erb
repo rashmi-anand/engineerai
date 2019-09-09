@@ -1,0 +1,13 @@
+<div id="flash">
+	<% flash.each do |key, msg|%>
+		<% if (key == :error || key == :created || key == :updated || key == :success || key == :deleted)%>
+			<div class=<%= "alert alert-#{key}"%>>
+					<%= key%>
+					<%= msg%>
+			</div>
+		<% elsif key == :message%>
+			<div class=<%= "alert alert-#{key}"%>>
+			</div>
+		<% end %>
+	<% end %>
+</div>

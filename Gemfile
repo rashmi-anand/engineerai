@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.3.1'
+gem 'will_paginate-bootstrap4'
 
 gem 'devise'
 gem 'cancancan'

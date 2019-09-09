@@ -1,0 +1,42 @@
+
+<h3>Secret Codes </h3>
+
+<%= will_paginate @secret_codes, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+<table class="table">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Secret code</th>
+			<th scope="col">User Email</th>
+			<th scope="col">User Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @secret_codes.each do |secret_code|%>
+			<tr>
+				<td>
+					<%= secret_code.code %>
+				</td>
+				<td>
+					<%= secret_code.user.try(:email)%>
+				</td>
+				<td>
+					<%= secret_code.user.full_name if secret_code.user %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<div>
+	<h3>Generate Secret Codes</h3>
+
+	<%= form_tag secret_codes_path, class: 'form-inline' do %>
+
+		<div class="form-group  mx-sm-3 mb-2">
+			<%= select_tag "count", options_for_select(SecretCode::COUNT_OPTIONS,10), class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<%= submit_tag 'create' ,class: "btn btn-success btn-confirm btn-action "%>
+		</div>
+	<% end %>
+</div>
